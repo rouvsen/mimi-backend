@@ -1,0 +1,15 @@
+package az.spring.ecommerce.enums;
+
+public enum ErrorCode {
+
+    USER_NOT_FOUND,
+    PRODUCT_NOT_FOUND,
+    CATEGORY_NOT_FOUND,
+    VALIDATION_ERROR,
+    INTERNAL_SERVER_ERROR,
+    SERVICE_UNAVAILABLE,
+    ALREADY_EXIST,
+    INVALID_DATA,
+    UNAUTHORIZED_ACCESS
+
+}
