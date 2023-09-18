@@ -2,6 +2,8 @@ package az.spring.ecommerce.response;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class ProductResponse {
 
@@ -11,5 +13,7 @@ public class ProductResponse {
     private String color;
     private String material;
     private Long categoryId;
+
+    private List<String> imagesOfProduct; //TODO: Check with this field
 
 }
