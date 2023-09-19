@@ -14,7 +14,6 @@ public class ProductRequest {
     private Long id;
     private String name;
     private Long price;
-    private String color;
     private String material;
     private Long categoryId;
 

@@ -22,9 +22,6 @@ public class Product {
     @Column(name = "price")
     private Long price;
 
-    @Column(name = "color")
-    private String color;
-
     @Column(name = "material")
     private String material;
 
