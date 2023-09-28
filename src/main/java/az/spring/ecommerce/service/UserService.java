@@ -94,6 +94,10 @@ public class UserService {
         return userMapper.fromModelToWrapper(userRepository.findByUsername(username));
     }
 
+    public User getUserByEmail(String email) {
+        return userRepository.findByEmail(email).orElseGet(() -> null);
+    }
+
     public List<UserWrapper> getUserByName(String name) {
         return userMapper.fromModelToWrapper(userRepository.findByName(name));
     }
@@ -116,8 +120,8 @@ public class UserService {
         user.setEmail(userSignUpRequest.getEmail());
         user.setName(userSignUpRequest.getName());
         user.setPassword(encryptionService.encryptPassword(userSignUpRequest.getPassword()));
-        user.setUserRole("moderator");
-        user.setStatus("false");
+        user.setUserRole("admin");
+        user.setStatus("true");
         return user;
     }
 

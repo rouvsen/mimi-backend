@@ -24,7 +24,7 @@ public class SubCollectionController {
         return subCollectionService.createSubCollection(sub, userId);
     }
 
-    @GetMapping("/{subCollectionId}")
+    @GetMapping("/byId/{subCollectionId}")
     public ResponseEntity<?> getSubCollectionById(@PathVariable("subCollectionId") Long id) {
         return subCollectionService.getSubCollectionById(id);
     }
@@ -38,7 +38,7 @@ public class SubCollectionController {
         return subCollectionService.updateSubCollection(userId, head, subCollectionId);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<?> getAllSubCollections() {
         return subCollectionService.getAllSubCollections();
     }

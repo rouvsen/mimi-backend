@@ -1,5 +1,6 @@
 package az.spring.ecommerce.controller;
 
+import az.spring.ecommerce.model.User;
 import az.spring.ecommerce.request.StatusAndRoleUserRequest;
 import az.spring.ecommerce.request.UserSignUpRequest;
 import az.spring.ecommerce.response.AuthenticationResponse;
@@ -28,11 +29,13 @@ public class UserController {
     @PostMapping("/login")
     public ResponseEntity<AuthenticationResponse> login(@RequestBody UserSignUpRequest userSignUpRequest) {
         String jwt = userService.login(userSignUpRequest);
-        if (jwt == null) {
+        if (jwt.getBytes().length < 25) {
             return ResponseEntity.status(BAD_REQUEST).build();
         } else {
             AuthenticationResponse response = new AuthenticationResponse();
             response.setJwtToken(jwt);
+            User userByEmail = userService.getUserByEmail(userSignUpRequest.getEmail());
+            response.setCurrentUserId(userByEmail.getId());
             return ResponseEntity.ok(response);
         }
     }

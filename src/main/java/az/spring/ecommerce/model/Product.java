@@ -30,7 +30,7 @@ public class Product {
     @JsonIgnore
     private Category category;
 
-    @ElementCollection
-    private List<String> imagesOfProduct; //TODO: Check Field
+//    @ElementCollection
+    private String imageOfProduct; //TODO: Check Field
 
 }

@@ -24,13 +24,13 @@ public class ProductController {
 
     @PostMapping("/add/{adminId}")
     public ResponseEntity<?> createProduct(
-            @ModelAttribute ProductRequest request, //TODO: CHECK API
+            @RequestBody ProductRequest request, //TODO: CHECK API
             @PathVariable Long adminId
     ) {
         return productService.createProduct(request, adminId);
     }
 
-    @GetMapping("/{productId}")
+    @GetMapping("/byId/{productId}")
     public ResponseEntity<?> getProductById(@PathVariable("productId") Long id) {
         return productService.getProductById(id);
     }
@@ -38,13 +38,13 @@ public class ProductController {
     @PutMapping("/{userId}/update/{productId}")
     public ResponseEntity<?> updateProduct(
             @PathVariable("userId") Long userId,
-            @ModelAttribute ProductRequest request, //TODO: CHECK API
+            @RequestBody ProductRequest request, //TODO: CHECK API
             @PathVariable("productId") Long productId
     ) {
         return productService.updateProduct(userId, request, productId);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<?> getAllProducts() {
         return productService.getAllProducts();
     }

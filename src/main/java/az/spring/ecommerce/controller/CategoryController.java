@@ -22,7 +22,7 @@ public class CategoryController {
         return categoryService.getCategoriesWithSpecification(filterSearchRequest);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<?> getAllCategory() {
         return ResponseEntity.ok(categoryService.getAllCategory());
     }
@@ -33,7 +33,7 @@ public class CategoryController {
             return categoryService.addCategory(categoryRequest, userId);
     }
 
-    @GetMapping("/{categoryId}")
+    @GetMapping("/byId/{categoryId}")
     public ResponseEntity<?> getCategoryById(
             @PathVariable("categoryId") Long id
     ) {

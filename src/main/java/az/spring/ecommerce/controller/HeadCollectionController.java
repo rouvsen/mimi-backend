@@ -23,7 +23,7 @@ public class HeadCollectionController {
         return headCollectionService.createHeadCollection(head, userId);
     }
 
-    @GetMapping("/{headCollectionId}")
+    @GetMapping("/byId/{headCollectionId}")
     public ResponseEntity<?> getHeadCollectionById(@PathVariable("headCollectionId") Long id) {
         return headCollectionService.getHeadCollectionById(id);
     }
@@ -37,7 +37,7 @@ public class HeadCollectionController {
         return headCollectionService.updateHeadCollection(userId, head, headCollectionId);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<?> getAllHeadCollections() {
         return headCollectionService.getAllHeadCollections();
     }

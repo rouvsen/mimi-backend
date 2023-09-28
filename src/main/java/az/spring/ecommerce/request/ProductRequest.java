@@ -4,8 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,6 +15,6 @@ public class ProductRequest {
     private String material;
     private Long categoryId;
 
-    private List<String> imagesOfProduct; //TODO: Check with this field
+    private String imageOfProduct; //TODO: Check with this field
 
 }
